@@ -1,3 +1,16 @@
+@zladuric/xml2js
+================
+
+## NOTE
+
+_You probably don't want this package, you want `xml2js`. This is simply cloned
+from https://github.com/Leonidas-from-XIV/node-xml2js. The only difference is
+added `attrsAsValues` option. Even that is not original, it's just a stale
+not-accepted-not-rejected PR to the original code which was needed for a
+project: https://github.com/bruderstein/node-xml2js._
+
+Original README bellow.
+
 node-xml2js
 ===========
 
@@ -235,6 +248,12 @@ value})``. Possible options are:
   * `mergeAttrs` (default: `false`): Merge attributes and child elements as
     properties of the parent, instead of keying attributes off a child
     attribute object. This option is ignored if `ignoreAttrs` is `false`.
+  * `attrsAsValues` (default: `false`): When used with `mergeAttrs`, makes
+    attributes as values, even with `explicitArray` set to `true`. This can
+    make it easier to distinguish between properties that were attributes,
+    and properties that were content (content will be an array, attributes
+    will be strings). If `explicitArray` is `false`, setting this option will
+    have no effect.
   * `validator` (default `null`): You can specify a callable that validates
     the resulting structure somehow, however you want. See unit tests
     for an example.
